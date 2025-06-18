@@ -2,24 +2,19 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven3'  // name of Maven installation in Jenkins (Manage Jenkins > Global Tool Configuration)
-        jdk 'Java17'    // name of JDK installation
+        maven 'Maven3'
+        jdk 'JDK17'
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/1997alon/ChatApp-Backend.git'
-            }
-        }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
     }
