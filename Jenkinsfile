@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/1997alon/ChatApp-Backend.git'
+                git branch: 'main', url: 'https://github.com/1997alon/ChatApp-Backend-new.git'
             }
         }
         stage('Build') {
